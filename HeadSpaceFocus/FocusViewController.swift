@@ -10,6 +10,7 @@ import UIKit
 class FocusViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var refreshButton: UIButton!
     
     enum Section {
         case main
@@ -17,7 +18,8 @@ class FocusViewController: UIViewController {
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Focus>!
     
-    let list: [Focus] = Focus.list
+    var list: [Focus] = Focus.recommendations
+    var isAll = false
     
     // Data, Presentation, Layout
     override func viewDidLoad() {
@@ -31,15 +33,23 @@ class FocusViewController: UIViewController {
             cell.configure(item)
             return cell
         })
+        refreshButton.layer.cornerRadius = 10
+        refreshList()
         
-        // data
+        // layer
+        collectionView.collectionViewLayout = layout()
+    }
+    
+    private func refreshList() {
+        isAll = !isAll
+        list = isAll ? Focus.list : Focus.recommendations
+        let buttonText = isAll ? "See Recommendation" : "See All"
+        refreshButton.setTitle(buttonText, for: .normal)
+        
         var snapshot = NSDiffableDataSourceSnapshot<Section, Focus>()
         snapshot.appendSections([.main])
         snapshot.appendItems(list, toSection: .main)
         dataSource.apply(snapshot)
-        
-        // layer
-        collectionView.collectionViewLayout = layout()
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
@@ -57,6 +67,10 @@ class FocusViewController: UIViewController {
         section.interGroupSpacing = 10
         
         return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        refreshList()
     }
 }
 
