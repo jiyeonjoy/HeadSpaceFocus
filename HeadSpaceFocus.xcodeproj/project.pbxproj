@@ -16,6 +16,7 @@
 		DAAE9B4F2A78C000007F55D0 /* HeadSpaceFocusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE9B4E2A78C000007F55D0 /* HeadSpaceFocusTests.swift */; };
 		DAAE9B592A78C000007F55D0 /* HeadSpaceFocusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE9B582A78C000007F55D0 /* HeadSpaceFocusUITests.swift */; };
 		DAAE9B5B2A78C000007F55D0 /* HeadSpaceFocusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE9B5A2A78C000007F55D0 /* HeadSpaceFocusUITestsLaunchTests.swift */; };
+		DAAE9B682A78C0B9007F55D0 /* Focus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAE9B672A78C0B9007F55D0 /* Focus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DAAE9B542A78C000007F55D0 /* HeadSpaceFocusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadSpaceFocusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAE9B582A78C000007F55D0 /* HeadSpaceFocusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadSpaceFocusUITests.swift; sourceTree = "<group>"; };
 		DAAE9B5A2A78C000007F55D0 /* HeadSpaceFocusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadSpaceFocusUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DAAE9B672A78C0B9007F55D0 /* Focus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				DAAE9B372A78BFFF007F55D0 /* AppDelegate.swift */,
 				DAAE9B392A78BFFF007F55D0 /* SceneDelegate.swift */,
 				DAAE9B3B2A78BFFF007F55D0 /* ViewController.swift */,
+				DAAE9B672A78C0B9007F55D0 /* Focus.swift */,
 				DAAE9B3D2A78BFFF007F55D0 /* Main.storyboard */,
 				DAAE9B402A78C000007F55D0 /* Assets.xcassets */,
 				DAAE9B422A78C000007F55D0 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			files = (
 				DAAE9B3C2A78BFFF007F55D0 /* ViewController.swift in Sources */,
 				DAAE9B382A78BFFF007F55D0 /* AppDelegate.swift in Sources */,
+				DAAE9B682A78C0B9007F55D0 /* Focus.swift in Sources */,
 				DAAE9B3A2A78BFFF007F55D0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
