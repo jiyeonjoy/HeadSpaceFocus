@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Focus View Controller-->
+        <!--Focus-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="FocusViewController" id="BYZ-38-t0r" customClass="FocusViewController" customModule="HeadSpaceFocus" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,7 +103,7 @@
                             <constraint firstItem="gg4-lY-vr2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fLx-hB-rQ5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zbe-wF-uhr"/>
+                    <navigationItem key="navigationItem" title="Focus" id="zbe-wF-uhr"/>
                     <connections>
                         <outlet property="collectionView" destination="gg4-lY-vr2" id="byf-Ri-Q0V"/>
                         <outlet property="refreshButton" destination="oc8-H6-JNQ" id="bop-c0-e3F"/>
@@ -117,9 +117,10 @@
         <scene sceneID="E11-jY-D7r">
             <objects>
                 <navigationController id="a4A-xU-HHF" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QcK-8a-Ray">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="QcK-8a-Ray">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vD5-xz-6Dh"/>

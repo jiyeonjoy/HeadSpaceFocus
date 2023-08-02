@@ -42,7 +42,9 @@ class QuickFocusListViewController: UIViewController {
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "QuickFocusHeaderView", for: indexPath) as? QuickFocusHeaderView else { return nil }
             
             let allSections = Section.allCases
-            header.titleLabel.text = allSections[indexPath.section].title
+            let section = allSections[indexPath.section]
+            header.configure(section.title)
+//            header.titleLabel.text = allSections[indexPath.section].title
             return header
         }
         
@@ -53,20 +55,20 @@ class QuickFocusListViewController: UIViewController {
         datasource.apply(snapshot)
         
         collectionView.collectionViewLayout = layout()
-        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationItem.largeTitleDisplayMode = .never // 라지타이틀 모드 제거
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(50))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)) // 높이 estimated 넣어주면 텍스트 길어질 시에 자동으로 높이 늘어남.
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-        group.interItemSpacing = .fixed(10)
+        group.interItemSpacing = .fixed(10) // 그룹 안에 아이템 끼리 간격
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 20, bottom: 30, trailing: 20)
-        section.interGroupSpacing = 20
+        section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 20, bottom: 30, trailing: 20) // 섹션 마진
+        section.interGroupSpacing = 20 // 섹션 안에 그룹 간 간격
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
