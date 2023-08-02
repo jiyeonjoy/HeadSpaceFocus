@@ -67,6 +67,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="190" height="319"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="Vov-J3-9Ft" id="vul-dn-cVL"/>
+                                            <outlet property="thumbnailImageView" destination="NJu-kc-ao3" id="DWm-U9-OH4"/>
+                                            <outlet property="titleLabel" destination="eZW-C2-zyR" id="dUl-Po-qfu"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuickFocusHeaderView" id="L3I-M5-oIB" customClass="QuickFocusHeaderView" customModule="HeadSpaceFocus" customModuleProvider="target">
@@ -84,6 +89,9 @@
                                         <constraint firstItem="NqL-GZ-RfZ" firstAttribute="centerY" secondItem="L3I-M5-oIB" secondAttribute="centerY" id="fWs-JE-9b3"/>
                                         <constraint firstItem="NqL-GZ-RfZ" firstAttribute="leading" secondItem="L3I-M5-oIB" secondAttribute="leading" id="lDz-XS-WLF"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="NqL-GZ-RfZ" id="Egu-nU-OmC"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
@@ -96,6 +104,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hOG-nF-lmV" secondAttribute="trailing" id="nv4-M0-zaA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="hOG-nF-lmV" id="6V2-D6-45g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
