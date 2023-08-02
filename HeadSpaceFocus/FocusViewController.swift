@@ -38,6 +38,7 @@ class FocusViewController: UIViewController {
         
         // layer
         collectionView.collectionViewLayout = layout()
+        collectionView.delegate = self
     }
     
     private func refreshList() {
@@ -76,7 +77,11 @@ class FocusViewController: UIViewController {
 
 extension FocusViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "QuickFocus", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "QuickFocusListViewController") as? QuickFocusListViewController else { return }
         let focus = list[indexPath.item]
-        print(">>> selected: \(focus.title)")
+        print(">>> selected \(focus.title)")
+        vc.title = focus.title
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
